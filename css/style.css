@@ -196,7 +196,8 @@ body {
   text-decoration: none;
   color: inherit;
   background: #fff;
-  border-radius: 8px;
+  border: 1px solid #eee;
+  border-radius: 10px;
   overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -404,13 +405,13 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .page-width { padding: 0 20px; }
+  .page-width { padding: 0 24px; }
   .page-content { padding: 24px 0 60px; }
   .section-header__title { font-size: 22px; }
   .section-header { margin-bottom: 20px; }
   .section-tabs { margin-bottom: 20px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .tab { padding: 10px 14px 10px; font-size: 13px; white-space: nowrap; min-height: 44px; }
-  .card-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .card__title { font-size: 14px; }
   .card__content { padding: 10px 0 2px; }
   .header-layout { gap: 6px; }
@@ -427,8 +428,8 @@ body {
 }
 
 @media (max-width: 480px) {
-  .page-width { padding: 0 20px; }
-  .card-grid { grid-template-columns: 1fr; gap: 12px; }
+  .page-width { padding: 0 24px; }
+  .card-grid { grid-template-columns: 1fr; gap: 16px; }
   .card__image-wrap::before { padding-bottom: 56.25%; }
   .pagination { gap: 4px; }
   .page-btn { min-width: 36px; height: 36px; font-size: 12px; padding: 0 4px; }
@@ -443,7 +444,7 @@ body {
 }
 
 @media (max-width: 360px) {
-  .page-width { padding: 0 12px; }
+  .page-width { padding: 0 16px; }
   .page-content { padding: 16px 0 40px; }
   .card-grid { gap: 12px; }
   .card__title { font-size: 14px; }
