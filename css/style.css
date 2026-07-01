@@ -271,7 +271,7 @@ body::before {
 }
 
 .card__content {
-  padding: 14px 0 4px;
+  padding: 18px 0 4px;
 }
 
 .card__title {
@@ -631,16 +631,6 @@ body::before {
   margin: 28px 0 12px;
   padding-top: 20px;
   border-top: 1px solid #eee8e2;
-}
-
-/* First paragraph dropcap effect */
-.article__body p:first-of-type::first-letter {
-  font-family: "WindSong", serif;
-  font-size: 56px;
-  line-height: 0.8;
-  color: #00664f;
-  float: left;
-  margin: 8px 12px 0 0;
 }
 
 /* Footer */
