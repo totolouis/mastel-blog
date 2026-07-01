@@ -403,11 +403,33 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .page-width { padding: 0 16px; }
+  .page-content { padding: 24px 0 60px; }
   .section-header__title { font-size: 22px; }
-  .card-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .section-header { margin-bottom: 20px; }
+  .section-tabs { margin-bottom: 20px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .tab { padding: 8px 14px 8px; font-size: 13px; white-space: nowrap; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .card__title { font-size: 14px; }
+  .card__content { padding: 10px 0 2px; }
   .header-layout { flex-direction: column; gap: 10px; }
+  .pagination { margin-top: 24px; padding-top: 16px; gap: 3px; }
+  .page-btn { min-width: 32px; height: 32px; font-size: 13px; }
 }
 
 @media (max-width: 480px) {
-  .card-grid { grid-template-columns: 1fr; }
+  .card-grid { grid-template-columns: 1fr; gap: 16px; }
+  .card__image-wrap::before { padding-bottom: 75%; }
+  .section-content--active { margin: 0 -4px; }
+  .pagination { gap: 2px; }
+  .page-btn { min-width: 28px; height: 28px; font-size: 12px; padding: 0 4px; }
+  .tab { padding: 6px 10px 6px; font-size: 12px; }
+  .tab-count { font-size: 10px; padding: 0 5px; }
+}
+
+@media (max-width: 360px) {
+  .page-width { padding: 0 12px; }
+  .page-content { padding: 16px 0 40px; }
+  .card-grid { gap: 12px; }
+  .card__title { font-size: 13px; }
 }
