@@ -307,6 +307,7 @@ body {
 .article__content {
   max-width: 720px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .article__date {
@@ -418,6 +419,7 @@ body {
   .header-nav a { font-size: 12px; }
   .pagination { margin-top: 24px; padding-top: 16px; gap: 6px; }
   .page-btn { min-width: 36px; height: 36px; font-size: 13px; }
+  .article__content { padding: 0 16px; }
   .article__body { font-size: 15px; }
   .article__body h1 { font-size: 20px; }
   .article__body h2 { font-size: 18px; }
@@ -426,7 +428,7 @@ body {
 
 @media (max-width: 480px) {
   .card-grid { grid-template-columns: 1fr; gap: 16px; }
-  .card__image-wrap::before { padding-bottom: 75%; }
+  .card__image-wrap::before { padding-bottom: 56.25%; }
   .section-content--active { margin: 0 -4px; }
   .pagination { gap: 4px; }
   .page-btn { min-width: 36px; height: 36px; font-size: 12px; padding: 0 4px; }
@@ -437,6 +439,7 @@ body {
   .site-logo { font-size: 20px; }
   .header-nav a { font-size: 11px; letter-spacing: 0.5px; }
   .header-nav ul { gap: 10px; }
+  .article__content { padding: 0 12px; }
 }
 
 @media (max-width: 360px) {
@@ -446,4 +449,5 @@ body {
   .card__title { font-size: 14px; }
   .header-nav a { font-size: 10px; }
   .header-nav ul { gap: 6px; }
+  .article__content { padding: 0 8px; }
 }
