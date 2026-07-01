@@ -1160,16 +1160,75 @@
 
 <script>
 (function() {
+  var PAGE_SIZE = 10;
   var tabs = document.querySelectorAll('.tab');
   var contents = document.querySelectorAll('.section-content');
+
+  function buildPagination(container) {
+    var cards = container.querySelectorAll('.card-grid > .card');
+    var total = cards.length;
+    var pages = Math.ceil(total / PAGE_SIZE);
+    if (pages <= 1) return null;
+
+    var existing = container.querySelector('.pagination');
+    if (existing) existing.remove();
+
+    var nav = document.createElement('div');
+    nav.className = 'pagination';
+
+    for (var p = 1; p <= pages; p++) {
+      (function(page) {
+        var btn = document.createElement('button');
+        btn.className = 'page-btn' + (page === 1 ? ' page-btn--active' : '');
+        btn.textContent = page;
+        btn.addEventListener('click', function() {
+          showPage(container, page);
+          nav.querySelectorAll('.page-btn').forEach(function(b) {
+            b.classList.remove('page-btn--active');
+          });
+          btn.classList.add('page-btn--active');
+        });
+        nav.appendChild(btn);
+      })(p);
+    }
+
+    container.appendChild(nav);
+    return nav;
+  }
+
+  function showPage(container, page) {
+    var cards = container.querySelectorAll('.card-grid > .card');
+    var start = (page - 1) * PAGE_SIZE;
+    var end = start + PAGE_SIZE;
+    cards.forEach(function(c, i) {
+      c.style.display = (i >= start && i < end) ? '' : 'none';
+    });
+  }
+
   function activate(section) {
     for (var i = 0; i < tabs.length; i++) {
       tabs[i].classList.toggle('tab--active', tabs[i].getAttribute('data-section') === section);
     }
     for (var i = 0; i < contents.length; i++) {
-      contents[i].classList.toggle('section-content--active', contents[i].getAttribute('data-section') === section);
+      var isActive = contents[i].getAttribute('data-section') === section;
+      contents[i].classList.toggle('section-content--active', isActive);
+      if (isActive) {
+        showPage(contents[i], 1);
+        var nav = buildPagination(contents[i]);
+        if (nav) {
+          var btns = nav.querySelectorAll('.page-btn');
+          btns.forEach(function(b) { b.classList.remove('page-btn--active'); });
+          if (btns.length) btns[0].classList.add('page-btn--active');
+        }
+      }
     }
   }
+
+  for (var i = 0; i < contents.length; i++) {
+    showPage(contents[i], 1);
+    buildPagination(contents[i]);
+  }
+
   for (var i = 0; i < tabs.length; i++) {
     tabs[i].addEventListener('click', function(e) {
       activate(this.getAttribute('data-section'));

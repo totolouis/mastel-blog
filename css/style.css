@@ -252,6 +252,50 @@ body {
   color: #999;
 }
 
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.page-btn {
+  background: none;
+  border: 1px solid #e0e0e0;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 8px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.page-btn:hover {
+  border-color: #00664f;
+  color: #00664f;
+}
+
+.page-btn--active {
+  background: #00664f;
+  border-color: #00664f;
+  color: #fff;
+  font-weight: 600;
+}
+
+.page-btn--active:hover {
+  background: #00513f;
+  border-color: #00513f;
+  color: #fff;
+}
+
 .blog-count {
   color: #999;
   font-size: 13px;
