@@ -404,7 +404,7 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .page-width { padding: 0 16px; }
+  .page-width { padding: 0 20px; }
   .page-content { padding: 24px 0 60px; }
   .section-header__title { font-size: 22px; }
   .section-header { margin-bottom: 20px; }
@@ -427,9 +427,9 @@ body {
 }
 
 @media (max-width: 480px) {
-  .card-grid { grid-template-columns: 1fr; gap: 16px; }
+  .page-width { padding: 0 20px; }
+  .card-grid { grid-template-columns: 1fr; gap: 12px; }
   .card__image-wrap::before { padding-bottom: 56.25%; }
-  .section-content--active { margin: 0 -4px; }
   .pagination { gap: 4px; }
   .page-btn { min-width: 36px; height: 36px; font-size: 12px; padding: 0 4px; }
   .tab { padding: 8px 10px 8px; font-size: 12px; min-height: 40px; }
